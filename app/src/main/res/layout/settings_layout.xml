@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@color/splashBackground">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_zipcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColorHint="@android:color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_zipcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/til_hint_zipcode"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_units"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:layout_below="@id/til_zipcode">
+
+        <TextView
+            android:id="@+id/tv_txt_units"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/tv_txt_units"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/toggle_btn_border">
+            <ToggleButton
+                android:id="@+id/tb_celsius"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOff="@string/tb_txt_c"
+                android:textOn="@string/tb_txt_c"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:background="@drawable/toggle_btn_border"/>
+            <ToggleButton
+                android:id="@+id/tb_fahrenheit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textOff="@string/tb_txt_f"
+                android:textOn="@string/tb_txt_f"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:background="@drawable/toggle_btn_border" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btn_config_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_txt_save"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textAllCaps="false"
+        android:layout_margin="8dp"
+        android:layout_below="@id/ll_units"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/toggle_btn_border"/>
+</RelativeLayout>

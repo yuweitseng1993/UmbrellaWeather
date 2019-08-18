@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity"
+    android:background="@color/splashBackground">
+
+    <RelativeLayout
+        android:id="@+id/rl_cur_weather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@color/coldWeather"
+        android:padding="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_weather_area"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Atlanta, GA"
+            android:textSize="25sp"
+            style="@style/CurWeatherTheme"/>
+
+        <ImageView
+            android:id="@+id/iv_setting_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_settings_white_48dp"
+            style="@style/CurWeatherTheme"/>
+        
+        <TextView
+            android:id="@+id/tv_weather_degree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_weather_area"
+            android:gravity="center"
+            tools:text="24\u2103"
+            android:textSize="50sp"
+            style="@style/CurWeatherTheme"/>
+
+        <TextView
+            android:id="@+id/tv_weather_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_weather_degree"
+            android:gravity="center"
+            tools:text="Clear"
+            android:textSize="25sp"
+            style="@style/CurWeatherTheme"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/day_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/rl_cur_weather" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

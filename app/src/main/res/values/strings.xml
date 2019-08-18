@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UmbrellaWeather</string>
+    <string name="tv_txt_units">Units</string>
+    <string name="btn_txt_save">Save</string>
+    <string name="til_hint_zipcode">Zipcode</string>
+    <string name="tb_txt_c">℃</string>
+    <string name="tb_txt_f">℉</string>
+</resources>
