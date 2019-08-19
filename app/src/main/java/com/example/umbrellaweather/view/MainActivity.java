@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity implements ViewContract, Set
     TextView curWeatherArea, curWeatherDegree, curWeatherCondition;
     RelativeLayout curWeatherBg;
     DayCustomAdapter dayCustomAdapter;
-    public static RecyclerView hourRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,7 +77,6 @@ public class MainActivity extends AppCompatActivity implements ViewContract, Set
         curWeatherDegree = findViewById(R.id.tv_weather_degree);
         curWeatherCondition = findViewById(R.id.tv_weather_condition);
         curWeatherBg = findViewById(R.id.rl_cur_weather);
-        dayRecyclerView = findViewById(R.id.day_recycler_view);
 
         dayRecyclerView = findViewById(R.id.day_recycler_view);
         dayRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -86,7 +84,6 @@ public class MainActivity extends AppCompatActivity implements ViewContract, Set
         SnapHelper helper = new LinearSnapHelper();
         helper.attachToRecyclerView(dayRecyclerView);
         dayRecyclerView.setAdapter(dayCustomAdapter);
-//        hourRecyclerView = findViewById(R.id.hour_recycler_view);
     }
 
     @Override

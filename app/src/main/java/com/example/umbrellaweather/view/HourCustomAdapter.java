@@ -14,8 +14,6 @@ import java.util.List;
 
 public class HourCustomAdapter extends RecyclerView.Adapter<HourCustomViewHolder> {
     private List<HourCard> hourlyData;
-    private String hour;
-    private int degree;
     private Context context;
 
     public HourCustomAdapter(Context context){
@@ -36,7 +34,16 @@ public class HourCustomAdapter extends RecyclerView.Adapter<HourCustomViewHolder
     @Override
     public void onBindViewHolder(@NonNull HourCustomViewHolder holder, int position) {
         holder.hourTime.setText(hourlyData.get(position).time);
-        holder.hourTemp.setText(hourlyData.get(position).degree);
+        String degree = Integer.toString(hourlyData.get(position).degree);
+        holder.hourTemp.setText(degree + "\u00B0");
+        if(hourlyData.get(position).highestTemp){
+            holder.hourTime.setTextColor(context.getResources().getColor(R.color.hotWeather));
+            holder.hourTemp.setTextColor(context.getResources().getColor(R.color.hotWeather));
+        }
+        else if(hourlyData.get(position).lowestTemp){
+            holder.hourTime.setTextColor(context.getResources().getColor(R.color.coldWeather));
+            holder.hourTemp.setTextColor(context.getResources().getColor(R.color.coldWeather));
+        }
     }
 
     @Override

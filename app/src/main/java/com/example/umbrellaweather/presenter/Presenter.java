@@ -185,8 +185,8 @@ public class Presenter implements PresenterContract {
         List<HourCard> hourDataSet = new ArrayList<>();
         String curDate = dataSet.list.get(0).dt_txt.split(" ")[0];
         int dayNum = 1;
-        int dayLowestTemp = (int)dataSet.list.get(0).main.temp;;
-        int dayHighestTemp = (int)dataSet.list.get(0).main.temp;;
+        int dayLowestTemp = (int)dataSet.list.get(0).main.temp;
+        int dayHighestTemp = (int)dataSet.list.get(0).main.temp;
         for(int i = 0; i < dataSet.list.size(); i++){
             if(dataSet.list.get(i).dt_txt.split(" ")[0].equals(curDate)){
                 int timeNum = Integer.parseInt((dataSet.list.get(i).dt_txt.split(" ")[1]).split(":")[0]);
@@ -223,6 +223,8 @@ public class Presenter implements PresenterContract {
                 }
                 dayNum += 1;
                 curDate = dataSet.list.get(i).dt_txt.split(" ")[0];
+                dayLowestTemp = (int)dataSet.list.get(i).main.temp;
+                dayHighestTemp = (int)dataSet.list.get(i).main.temp;
                 hourDataSet = new ArrayList<>();
                 int timeNum = Integer.parseInt((dataSet.list.get(i).dt_txt.split(" ")[1]).split(":")[0]);
                 String time;

@@ -2,6 +2,7 @@ package com.example.umbrellaweather.view;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -18,7 +19,8 @@ public class DayCustomAdapter extends RecyclerView.Adapter<DayCustomViewHolder> 
     private List<DayCard> dailyData;
     private Context context;
 //    RecyclerView hourRecyclerView;
-//    HourCustomAdapter hourCustomAdapter;
+    HourCustomAdapter hourCustomAdapter;
+    private static final String TAG = "DayCustomAdapter";
 
     public DayCustomAdapter(Context context){
         this.context = context;
@@ -38,10 +40,10 @@ public class DayCustomAdapter extends RecyclerView.Adapter<DayCustomViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull DayCustomViewHolder holder, int position) {
         holder.textView.setText(dailyData.get(position).date);
-//        MainActivity.hourRecyclerView.setLayoutManager(new GridLayoutManager(context, 4));
-//        hourCustomAdapter = new HourCustomAdapter(context);
-//        MainActivity.hourRecyclerView.setAdapter(hourCustomAdapter);
-//        hourCustomAdapter.setDataset(dailyData.get(position).hourData);
+        hourCustomAdapter = new HourCustomAdapter(context);
+        holder.hourRecyclerView.setLayoutManager(new GridLayoutManager(context, 4));
+        holder.hourRecyclerView.setAdapter(hourCustomAdapter);
+        hourCustomAdapter.setDataset(dailyData.get(position).hourData);
     }
 
     @Override

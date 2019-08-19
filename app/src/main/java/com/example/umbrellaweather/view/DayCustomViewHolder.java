@@ -10,9 +10,11 @@ import com.example.umbrellaweather.R;
 
 public class DayCustomViewHolder extends RecyclerView.ViewHolder {
     TextView textView;
+    RecyclerView hourRecyclerView;
 
     public DayCustomViewHolder(@NonNull View itemView) {
         super(itemView);
         textView = itemView.findViewById(R.id.day_card_title);
+        hourRecyclerView = itemView.findViewById(R.id.hour_recycler_view);
     }
 }
