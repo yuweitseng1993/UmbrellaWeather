@@ -75,8 +75,8 @@ public class SettingsDialogFragment extends DialogFragment {
                 zipcode = userZipcode.getText().toString();
                 if(checkFields()){
                     dataPasser.onDataPass(zipcode, unit);
+                    dismiss();
                 }
-                dismiss();
             }
         });
     }
