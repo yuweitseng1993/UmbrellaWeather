@@ -7,4 +7,5 @@
     <color name="hotWeather">#FF9800</color>
     <color name="splashBackground">#424242</color>
     <color name="androidGreen">#A4C639</color>
+    <color name="white">#FFFFFF</color>
 </resources>

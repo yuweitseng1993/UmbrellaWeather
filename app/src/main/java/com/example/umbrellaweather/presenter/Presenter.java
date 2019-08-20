@@ -207,7 +207,7 @@ public class Presenter implements PresenterContract {
                 if(degree > dayHighestTemp){
                     dayHighestTemp = degree;
                 }
-                hourDataSet.add(new HourCard(time, dataSet.list.get(i).weather.get(0).main, degree));
+                hourDataSet.add(new HourCard(time, dataSet.list.get(i).weather.get(0).main, degree, dataSet.list.get(i).weather.get(0).icon));
             }
             else{
                 sortForecastDataset(hourDataSet, dayLowestTemp, dayHighestTemp);
@@ -238,7 +238,7 @@ public class Presenter implements PresenterContract {
                     time = timeNum + ":00 AM";
                 }
                 int degree = (int)dataSet.list.get(i).main.temp;
-                hourDataSet.add(new HourCard(time, dataSet.list.get(i).weather.get(0).main, degree));
+                hourDataSet.add(new HourCard(time, dataSet.list.get(i).weather.get(0).main, degree, dataSet.list.get(i).weather.get(0).icon));
             }
         }
         view.getForecastData(forecastDataSet);
